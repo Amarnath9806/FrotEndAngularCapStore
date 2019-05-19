@@ -1,0 +1,70 @@
+<!-- <h1 style="color: chocolate">REFUND SHOULD BE DONE FOR THE FOLLOWING PRODUCTS</h1> -->
+<br>
+<br>
+<!-- <button  class="btn btn-block btn-primary"(click)="onSubmit()" ng-model="myVar" ng-init="myVar = true">Click here for getting products that should be refunded</button> -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button id="pending" name="pending" class="btn btn-outline-success my-2 my-sm-0" type="submit"
+  (click)="onSubmit()">PENDING REFUNDS</button>&nbsp;&nbsp;
+<div *ngIf="refunded">
+        <table class="table table-striped">
+                <thead>
+                  <td>Index</td>
+                  <td><button (click) = "returnSort()" class="btn btn-primary">RETURN ID</button></td>
+                  <td><button (click) = "orderSort()" class="btn btn-primary">ORDER ID</button></td>
+                  <td><button (click) = "productSort()" class="btn btn-primary">PRODUCT ID</button></td>
+                  <td><button (click) = "priceSort()" class="btn btn-primary">PRODUCT PRICE</button></td>
+                  <td><button (click) = "customerSort()" class="btn btn-primary">CUSTOMER ID</button></td>
+                  <td><button (click) = "quantitySort()" class="btn btn-primary">PRODUCT OUANTITY</button></td>
+                </thead>
+
+                  <tr *ngFor="let refund of refunds, let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{refund.refundId}}</td>
+                    <td>{{refund.orderId}}</td>
+                    <td>{{refund.productId}}</td>
+                     <td>{{refund.productPrice}}</td>
+                     <td>{{refund.customerId}}</td>
+                     <td>{{refund.productQuantity}}</td>
+                    <td><button id="refund" name="refund" (click)="refundAmount(i)" class="btn btn-block btn-success ">REFUND</button></td>
+                </tr>
+            </table>
+</div>
+
+
+
+<!-- <button  class="btn btn-block btn-success"(click)="Refunded()">Click here for getting products that are refunded</button> -->
+<button id="refunded" name="refunded" class="btn btn-outline-success my-2 my-sm-0" type="submit"
+  (click)="Refunded()"> REFUNDED</button>&nbsp;&nbsp;
+<div *ngIf="refunded1">
+        <table class="table table-striped">
+                <thead>
+                  <td>Index</td>
+                  <td><button (click) = "transactionSort()" class="btn btn-primary">TRANSACTIONS ID</button></td>
+                  <td><button (click) = "returnSort()" class="btn btn-primary">RETURN ID</button></td>
+                  <td><button (click) = "orderSort()" class="btn btn-primary">ORDER ID</button></td>
+                  <td><button (click) = "productSort()" class="btn btn-primary">PRODUCT ID</button></td>
+                  <td><button (click) = "priceSort1()" class="btn btn-primary">PRODUCT PRICE</button></td>
+                  <td><button (click) = "customerSort()" class="btn btn-primary">CUSTOMER ID</button></td>
+                  <td><button (click) = "quantitySort()" class="btn btn-primary">PRODUCT OUANTITY</button></td>
+                </thead>
+
+                  <tr *ngFor="let refun of refunds1, let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{refun.transactionId}}</td>
+                    <td>{{refun.refundId}}</td>
+                    <td>{{refun.orderId}}</td>
+                    <td>{{refun.productId}}</td>
+                     <td>{{refun.productPrice}}</td>
+                     <td>{{refun.customerId}}</td>
+                     <td>{{refun.productQuantity}}</td>
+                    <!-- <td><button (click)="refundAmount(i)" class="btn btn-success">REFUND</button></td> -->
+                </tr>
+            </table>
+</div>
